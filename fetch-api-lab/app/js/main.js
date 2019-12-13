@@ -21,45 +21,40 @@ function logResult(result) {
 }
 
 function logError(error) {
-  console.log('Looks like there was a problem:', error);
+  console.log("Looks like there was a problem:", error);
 }
-
 
 // Fetch JSON ----------
 
 function fetchJSON() {
   // TODO
 }
-const jsonButton = document.getElementById('json-btn');
-jsonButton.addEventListener('click', fetchJSON);
-
+const jsonButton = document.getElementById("json-btn");
+jsonButton.addEventListener("click", fetchJSON);
 
 // Fetch Image ----------
 
 function fetchImage() {
   // TODO
 }
-const imgButton = document.getElementById('img-btn');
-imgButton.addEventListener('click', fetchImage);
-
+const imgButton = document.getElementById("img-btn");
+imgButton.addEventListener("click", fetchImage);
 
 // Fetch text ----------
 
 function fetchText() {
   // TODO
 }
-const textButton = document.getElementById('text-btn');
-textButton.addEventListener('click', fetchText);
-
+const textButton = document.getElementById("text-btn");
+textButton.addEventListener("click", fetchText);
 
 // HEAD request ----------
 
 function headRequest() {
   // TODO
 }
-const headButton = document.getElementById('head-btn');
-headButton.addEventListener('click', headRequest);
-
+const headButton = document.getElementById("head-btn");
+headButton.addEventListener("click", headRequest);
 
 // POST request ----------
 
@@ -67,5 +62,5 @@ headButton.addEventListener('click', headRequest);
 function postRequest() {
   // TODO
 }
-const postButton = document.getElementById('post-btn');
-postButton.addEventListener('click', postRequest);
+const postButton = document.getElementById("post-btn");
+postButton.addEventListener("click", postRequest);
