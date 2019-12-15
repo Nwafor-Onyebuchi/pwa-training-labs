@@ -41,6 +41,11 @@ jsonButton.addEventListener("click", fetchJSON);
 
 function fetchImage() {
   // TODO
+  fetch("examples/fetching.jpg")
+    .then(validateResponse)
+    .then(readResponseAsBlob)
+    .then(showImage)
+    .catch(logError);
 }
 const imgButton = document.getElementById("img-btn");
 imgButton.addEventListener("click", fetchImage);
@@ -49,6 +54,11 @@ imgButton.addEventListener("click", fetchImage);
 
 function fetchText() {
   // TODO
+  fetch("/examples/words.txt")
+    .then(validateResponse)
+    .then(readResponseAsText)
+    .then(showText)
+    .catch(logError);
 }
 const textButton = document.getElementById("text-btn");
 textButton.addEventListener("click", fetchText);
@@ -57,6 +67,13 @@ textButton.addEventListener("click", fetchText);
 
 function headRequest() {
   // TODO
+  fetch("/examples/words.txt", {
+    method: "HEAD"
+  })
+    .then(validateResponse)
+    .then(readResponseAsText)
+    .then(showText)
+    .catch(logError);
 }
 const headButton = document.getElementById("head-btn");
 headButton.addEventListener("click", headRequest);
@@ -69,8 +86,6 @@ function postRequest() {
 }
 const postButton = document.getElementById("post-btn");
 postButton.addEventListener("click", postRequest);
-<<<<<<< HEAD
-=======
 
 // Validate response
 const validateResponse = (response) => {
@@ -84,4 +99,27 @@ const validateResponse = (response) => {
 const readResponseAsJSON = (response) => {
   return response.json();
 };
->>>>>>> fetchJSON
+
+// Show image
+const showImage = (responseAsBlob) => {
+  const container = document.getElementById("img-container");
+  const imgElem = document.createElement("img");
+  container.appendChild(imgElem);
+  const imgUrl = URL.createObjectURL(responseAsBlob);
+  imgElem.src = imgUrl;
+};
+// Read response as a blob
+const readResponseAsBlob = (response) => {
+  return response.blob();
+};
+
+// Show text
+const showText = (responseAsText) => {
+  const message = document.getElementById("message");
+  message.textContent = responseAsText;
+};
+
+//Read response as a text
+const readResponseAsText = (response) => {
+  return response.text();
+};
