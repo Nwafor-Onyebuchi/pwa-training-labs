@@ -16,10 +16,13 @@ limitations under the License.
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes"
+    />
+    <meta charset="utf-8" />
     <title>Promises Lab</title>
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
 
   <body>
@@ -29,33 +32,38 @@ limitations under the License.
 
     <main>
       <label for="country">Country Name:</label>
-      <input id="country" type="text" placeholder="enter country name"><br><br>
-      <button id="get-image-name">Get Image Name</button><br><br>
-      <button id="fetch-flag-image">Fetch Flag Image</button><br><br>
+      <input
+        id="country"
+        type="text"
+        placeholder="enter country name"
+      /><br /><br />
+      <button id="get-image-name">Get Image Name</button><br /><br />
+      <button id="fetch-flag-image">Fetch Flag Image</button><br /><br />
       <div class="img-container" id="img-container">
         <!-- image added dynamically -->
       </div>
     </main>
 
     <footer>
-      <a href="https://github.com/google-developer-training/pwa-training-labs">GitHub</a>
+      <a href="https://github.com/google-developer-training/pwa-training-labs"
+        >GitHub</a
+      >
     </footer>
 
     <script src="js/main.js"></script>
 
     <script>
-      const country = document.getElementById('country');
+      const country = document.getElementById("country");
 
-      const getImageNameButton = document.getElementById('get-image-name');
-      getImageNameButton.addEventListener('click', function() {
+      const getImageNameButton = document.getElementById("get-image-name");
+      getImageNameButton.addEventListener("click", function() {
         app.getImageName(country.value);
       });
 
-      const flagChainButton = document.getElementById('fetch-flag-image');
-      flagChainButton.addEventListener('click', function() {
+      const flagChainButton = document.getElementById("fetch-flag-image");
+      flagChainButton.addEventListener("click", function() {
         app.flagChain(country.value);
       });
-
     </script>
   </body>
 </html>
